@@ -5,7 +5,7 @@ Visit stores or merchants
 - Kotlin 
 - Retrofit 
 - Hilt 
-- MVVM + UDF 
+- MVVM
 - Coroutines
 - Google Maps SDK
 - Room
