@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="CustomCheckbox" parent="Widget.Material3.CompoundButton.CheckBox">
+        <item name="colorControlNormal">#000</item>   <!-- normal border color change as you wish -->
+        <item name="colorControlActivated">#000</item> <!-- activated color change as you wish -->
+        <item name="android:textColor">#FFFF3F3C</item> <!-- checkbox text color -->
+    </style>
+</resources>

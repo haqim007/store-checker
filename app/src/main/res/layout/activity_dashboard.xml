@@ -1,0 +1,482 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout 
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.dashboard.DashboardActivity"
+        android:background="@color/transparent_blue"
+        >
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/mcvBanner"
+            android:layout_width="match_parent"
+            android:layout_height="125dp"
+            android:backgroundTint="@color/blue"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:cardCornerRadius="0dp"
+            app:cardElevation="20dp">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/main_menu"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"/>
+
+                <ImageButton
+                    android:id="@+id/btnRefresh"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    style="?attr/materialIconButtonStyle"
+                    android:src="@drawable/ic_autorenew_white_24"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginTop="16dp"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/materialCardView"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="75dp"
+            app:cardCornerRadius="100dp"
+            app:cardElevation="20dp"
+            app:layout_constraintEnd_toEndOf="@+id/mcvBanner"
+            app:layout_constraintStart_toStartOf="@+id/mcvBanner"
+            app:layout_constraintTop_toTopOf="@+id/mcvBanner">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/avatar" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:id="@+id/tvUserFullname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:alpha="0.6"
+            android:text="@string/mitha_khairulnisa"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/materialCardView"
+            android:layout_marginTop="16dp"/>
+
+        <TextView
+            android:id="@+id/tvUserRole"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:alpha="0.5"
+            android:text="@string/role"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvUserFullname" />
+
+        <TextView
+            android:id="@+id/tvUserNik"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:alpha="0.4"
+            android:text="@string/nik_md000001"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvUserRole" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/mcvDataStore"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginHorizontal="16dp"
+            app:layout_constraintTop_toBottomOf="@+id/tvUserNik"
+            app:cardCornerRadius="10dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/tvVisitTitle"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/visit_on_month_"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    app:layout_constraintTop_toBottomOf="@id/tvVisitTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:paddingHorizontal="16dp"
+                        android:layout_weight="1">
+
+                        <ImageView
+                            android:id="@+id/ivAllStore"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:src="@drawable/warning"
+                            android:layout_marginTop="50dp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/tvTotalAllStore"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/_150"
+                            android:textSize="25sp"
+                            android:layout_marginStart="10dp"
+                            app:layout_constraintBottom_toBottomOf="@+id/ivAllStore"
+                            app:layout_constraintStart_toEndOf="@+id/ivAllStore"
+                            app:layout_constraintTop_toTopOf="@+id/ivAllStore" />
+
+                        <TextView
+                            android:id="@+id/tvTotalStore"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="14dp"
+                            android:gravity="center_horizontal"
+                            android:text="Total Store"
+                            android:textSize="12sp"
+                            app:layout_constraintEnd_toEndOf="@+id/tvTotalAllStore"
+                            app:layout_constraintStart_toStartOf="@+id/ivAllStore"
+                            app:layout_constraintTop_toBottomOf="@+id/ivAllStore" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:paddingHorizontal="16dp"
+                        android:layout_weight="1">
+
+                        <ImageView
+                            android:id="@+id/ivActualStore"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:src="@drawable/check"
+                            android:layout_marginTop="50dp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/tvTotalActualStore"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/_150"
+                            android:textSize="25sp"
+                            android:layout_marginStart="10dp"
+                            app:layout_constraintBottom_toBottomOf="@+id/ivActualStore"
+                            app:layout_constraintStart_toEndOf="@+id/ivActualStore"
+                            app:layout_constraintTop_toTopOf="@+id/ivActualStore" />
+
+                        <TextView
+                            android:id="@+id/tvTotalActualStoreTitle"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="14dp"
+                            android:gravity="center_horizontal"
+                            android:text="Actual Store"
+                            android:textSize="12sp"
+                            app:layout_constraintEnd_toEndOf="@+id/tvTotalActualStore"
+                            app:layout_constraintStart_toStartOf="@+id/ivActualStore"
+                            app:layout_constraintTop_toBottomOf="@+id/tvTotalActualStore" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:paddingHorizontal="16dp"
+                        android:layout_weight="1">
+
+                        <ImageView
+                            android:id="@+id/ivPercentageStore"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:src="@drawable/bar_chart_icon"
+                            android:layout_marginTop="50dp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/tvPercentageStore"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/_50"
+                            android:textSize="25sp"
+                            android:layout_marginStart="10dp"
+                            app:layout_constraintBottom_toBottomOf="@+id/ivPercentageStore"
+                            app:layout_constraintStart_toEndOf="@+id/ivPercentageStore"
+                            app:layout_constraintTop_toTopOf="@+id/ivPercentageStore" />
+
+                        <TextView
+                            android:id="@+id/tvPercentageStoreTitle"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="14dp"
+                            android:gravity="center_horizontal"
+                            android:text="Percentage"
+                            android:textSize="12sp"
+                            app:layout_constraintEnd_toEndOf="@+id/tvPercentageStore"
+                            app:layout_constraintStart_toStartOf="@+id/ivPercentageStore"
+                            app:layout_constraintTop_toBottomOf="@+id/tvPercentageStore" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/mcvDataStore"
+            app:cardCornerRadius="0dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/tvMenuTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:text="@string/menu"
+                    android:textColor="@android:color/holo_orange_light"
+                    android:layout_margin="8dp"
+                    android:textSize="16sp"
+                    android:textStyle="bold"/>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/llMenu"
+                    android:layout_marginTop="16dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@+id/tvMenuTitle"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/llMenuVisit"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_weight="1"
+                        android:layout_marginHorizontal="8dp">
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="75dp"
+                            android:layout_height="75dp"
+                            app:cardCornerRadius="100dp"
+                            android:layout_gravity="center"
+                            app:cardBackgroundColor="@color/transparent_blue">
+
+                            <ImageView
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:scaleType="centerInside"
+                                android:src="@drawable/store"
+                                android:layout_gravity="center"/>
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <TextView
+                            android:layout_gravity="center"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/site_visit"
+                            android:textSize="14sp"/>
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/llMenuTargetVisit"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_weight="1"
+                        android:layout_marginHorizontal="8dp">
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="75dp"
+                            android:layout_height="75dp"
+                            app:cardCornerRadius="100dp"
+                            android:layout_gravity="center"
+                            app:cardBackgroundColor="@color/transparent_blue">
+
+                            <ImageView
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:scaleType="centerInside"
+                                android:src="@drawable/darts"
+                                android:layout_gravity="center"/>
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <TextView
+                            android:layout_gravity="center"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/target_install_cdfpdc"
+                            android:textSize="14sp"/>
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/llMenuDashboard"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_weight="1"
+                        android:layout_marginHorizontal="8dp">
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="75dp"
+                            android:layout_height="75dp"
+                            app:cardCornerRadius="100dp"
+                            android:layout_gravity="center"
+                            app:cardBackgroundColor="@color/transparent_blue">
+
+                            <ImageView
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:scaleType="centerInside"
+                                android:src="@drawable/dashboard"
+                                android:layout_gravity="center"/>
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <TextView
+                            android:layout_gravity="center"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/dashboard"
+                            android:textSize="14sp"/>
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/llMenuTransmissionHistory"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_weight="1"
+                        android:layout_marginHorizontal="8dp">
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="75dp"
+                            android:layout_height="75dp"
+                            app:cardCornerRadius="100dp"
+                            android:layout_gravity="center"
+                            app:cardBackgroundColor="@color/transparent_blue">
+
+                            <ImageView
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:scaleType="centerInside"
+                                android:src="@drawable/notebook"
+                                android:layout_gravity="center"/>
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <TextView
+                            android:layout_gravity="center"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/transmission_history"
+                            android:textSize="12sp"/>
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/llMenuLogout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_marginHorizontal="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/llMenu"
+                    app:layout_constraintBottom_toBottomOf="parent">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="75dp"
+                        android:layout_height="75dp"
+                        android:layout_gravity="center"
+                        app:cardBackgroundColor="@color/transparent_blue"
+                        app:cardCornerRadius="100dp">
+
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_gravity="center"
+                            android:scaleType="centerInside"
+                            android:src="@drawable/logout" />
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="@string/logout"
+                        android:textSize="14sp" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    
+</ScrollView>

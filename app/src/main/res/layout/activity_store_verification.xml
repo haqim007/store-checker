@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.storeverification.StoreVerificationActivity">
+
+    <ImageView
+        android:id="@+id/ivStorePict"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:src="@drawable/image_broken"
+        android:foregroundTint="@color/black"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.Toolbar
+        android:elevation="100dp"
+        android:id="@+id/customActionBar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:contentInsetStart="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageButton
+                android:id="@+id/btnBack"
+                style="?attr/materialIconButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/baseline_arrow_back_24"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/store_verification"
+                android:textSize="20sp"
+                app:layout_constraintTop_toTopOf="@id/btnBack"
+                app:layout_constraintStart_toEndOf="@+id/btnBack" />
+
+            <TextView
+                android:id="@+id/tvUsername"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/username"
+                android:textSize="14sp"
+                app:layout_constraintTop_toBottomOf="@id/tvTitle"
+                app:layout_constraintStart_toEndOf="@+id/btnBack" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/mcvTagLocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="60dp"
+        app:layout_constraintBottom_toBottomOf="@+id/ivStorePict"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:cardElevation="10dp"
+        android:layout_marginEnd="24dp">
+        
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/blue_gradient">
+            <ImageView
+                android:layout_margin="16dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:src="@drawable/baseline_my_location_24" />
+        </FrameLayout>
+        
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/mcvTakePict"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="60dp"
+        app:layout_constraintBottom_toBottomOf="@+id/ivStorePict"
+        app:layout_constraintEnd_toStartOf="@id/mcvTagLocation"
+        android:layout_marginEnd="8dp"
+        app:cardElevation="10dp">
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/blue_gradient">
+            <ImageView
+                android:layout_margin="16dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:src="@drawable/baseline_camera_alt_24" />
+        </FrameLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/mcvNavigation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="60dp"
+        app:layout_constraintBottom_toBottomOf="@+id/ivStorePict"
+        app:layout_constraintEnd_toStartOf="@id/mcvTakePict"
+        android:layout_marginEnd="8dp"
+        app:cardElevation="10dp">
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/blue_gradient">
+            <ImageView
+                android:layout_margin="16dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:src="@drawable/baseline_navigation_24" />
+        </FrameLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/mcvDetail"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="8dp"
+        android:layout_marginTop="275dp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintTop_toTopOf="@+id/ivStorePict">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="36dp">
+
+            <ImageView
+                android:id="@+id/ivStoreIcon"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="16dp"
+                android:paddingEnd="16dp"
+                android:src="@drawable/outline_store_24"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvStoreName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/store_name_placeholder"
+                android:textSize="18sp"
+                app:layout_constraintStart_toEndOf="@+id/ivStoreIcon"
+                app:layout_constraintTop_toTopOf="@+id/ivStoreIcon" />
+
+            <TextView
+                android:id="@+id/tvStoreAddress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:alpha="0.75"
+                android:text="@string/address_placeholder"
+                android:textSize="13sp"
+                app:layout_constraintStart_toEndOf="@+id/ivStoreIcon"
+                app:layout_constraintTop_toBottomOf="@+id/tvStoreName" />
+
+            <TableLayout
+                android:id="@+id/tlDetail"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:stretchColumns="1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/tvStoreAddress"
+                app:layout_constraintTop_toBottomOf="@+id/tvStoreAddress">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:padding="8dp"
+                        android:text="@string/tipe_outlet"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/tvOutletType"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:alpha="0.8"
+                        android:padding="8dp"
+                        android:text="@string/tipe_outlet"
+                        android:textSize="12sp" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:padding="8dp"
+                        android:text="@string/tipe_display"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/tvChannelName"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:alpha="0.8"
+                        android:padding="8dp"
+                        android:text="@string/tipe_display"
+                        android:textSize="12sp" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:padding="8dp"
+                        android:text="@string/sub_tipe_display"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/tvSubChannelName"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:alpha="0.8"
+                        android:padding="8dp"
+                        android:text="@string/sub_tipe_display"
+                        android:textSize="12sp" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:padding="8dp"
+                        android:text="@string/ertm"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:alpha="0.8"
+                        android:padding="8dp"
+                        android:text="@string/yes"
+                        android:textSize="12sp" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:padding="8dp"
+                        android:text="@string/pareto"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:alpha="0.8"
+                        android:padding="8dp"
+                        android:text="@string/yes"
+                        android:textSize="12sp" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:padding="8dp"
+                        android:text="@string/e_merchandising"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:alpha="0.8"
+                        android:padding="8dp"
+                        android:text="@string/yes"
+                        android:textSize="12sp" />
+                </TableRow>
+
+            </TableLayout>
+
+            <ImageView
+                android:id="@+id/ivNoteIcon"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:paddingEnd="16dp"
+                android:src="@drawable/baseline_event_note_24"
+                app:layout_constraintStart_toStartOf="@+id/ivStoreIcon"
+                app:layout_constraintTop_toBottomOf="@+id/tlDetail" />
+
+            <TextView
+                android:id="@+id/tvLastVisitTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/last_visit"
+                android:textSize="20sp"
+                app:layout_constraintStart_toEndOf="@+id/ivNoteIcon"
+                app:layout_constraintTop_toTopOf="@+id/ivNoteIcon" />
+
+            <TextView
+                android:id="@+id/tvLastVisit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="@string/none"
+                android:textSize="14sp"
+                app:layout_constraintStart_toEndOf="@+id/ivNoteIcon"
+                app:layout_constraintTop_toBottomOf="@+id/tvLastVisitTitle" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:minHeight="75dp"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/mcvDetail"
+        app:layout_constraintStart_toStartOf="@+id/mcvDetail"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tvMessageAction"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="action needed"
+            android:textColor="@android:color/holo_red_light"
+            android:textSize="18sp"
+            android:visibility="gone"
+            />
+        
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnNoVisit"
+            app:cornerRadius="5dp"
+            style="@style/Widget.Material3.Button.ElevatedButton"
+            app:backgroundTint="@android:color/holo_red_light"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="@string/no_visit"
+            android:textColor="@color/white"
+            android:layout_marginEnd="4dp"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnVisit"
+            app:cornerRadius="5dp"
+            style="@style/Widget.Material3.Button.ElevatedButton"
+            app:backgroundTint="@color/blue"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="@string/visit"
+            android:textColor="@color/white"
+            android:layout_marginStart="4dp"/>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:paddingHorizontal="16dp"
+    android:paddingVertical="8dp">
+
+    <TextView
+        android:id="@+id/tvStoreName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/store_name_placeholder"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:alpha="0.9"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvCluster"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cluster: Small"
+        android:alpha="0.75"
+        android:textSize="16sp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvStoreName" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:alpha="0.75"
+        android:text="TT Regular - IRTM Big Store"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvCluster" />
+
+    <ImageView
+        android:id="@+id/ivLocationPin"
+        android:layout_width="40dp"
+        android:layout_height="50dp"
+        android:src="@drawable/baseline_wrong_location_24"
+        app:layout_constraintEnd_toEndOf="@+id/tvDistance"
+        app:layout_constraintStart_toStartOf="@+id/tvDistance"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvDistance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/unknown"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivLocationPin"
+        android:layout_marginTop="8dp"/>
+
+    <ImageView
+        android:id="@+id/ivHasVisited"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="12dp"
+        android:src="@drawable/check"
+        android:visibility="gone"
+        tools:visibility="visible"
+        app:layout_constraintEnd_toStartOf="@+id/ivLocationPin"
+        app:layout_constraintTop_toTopOf="@+id/ivLocationPin" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
